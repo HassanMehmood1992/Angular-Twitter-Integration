@@ -1,0 +1,12 @@
+.push-left {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+.active{
+    background: rgba(0, 0, 0, 0.23)
+}
+.margin-left-10
+{
+    margin-left: 10px;
+}
