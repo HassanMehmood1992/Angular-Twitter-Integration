@@ -1,27 +1,27 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-      <mat-card style="margin-top: 100px">
+    <div class="col-md-4"></div>
+    <div class="col-md-3">
+      <mat-card style="margin-top: 80px;margin-bottom: 80px">
           <mat-card-title style="
           word-break: break-word;     margin-right: 20%;
       ">
         Edit Configurations
         </mat-card-title>
         <form>
-            <div class="col-md-6">
+            <div class="col-md-12">
           <div class="form-group">
             <label>Tweets per columns</label>
             <input type="number" max="15" min="5" class="form-control" id="tweetsPerColumn" placeholder="5">
           </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-12">
               <div class="form-group">
                 <label>Date Range of tweets</label>
                 <input type="text"  class="form-control" name="daterangeInput" daterangepicker [options]="options" (selected)="selectedDate($event, daterange)" />
               </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-12">
               <div class="form-group">
                 <label>Order of Tweets</label>
                 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
@@ -29,8 +29,15 @@
                 </div>
               </div>
           </div>
+          <div class="col-md-12">
+              <div class="form-group">
+                  <button  mat-stroked-button	 mat-button>
+                      Update
+                    </button>
+              </div>
+          </div>
+         
         </form>
-      
       </mat-card>
     </div>
   </div>

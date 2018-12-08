@@ -10,3 +10,5 @@
 {
     margin-left: 10px;
 }
+
+a:hover {background-color: #ddd; text-decoration: none}
