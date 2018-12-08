@@ -8,6 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { EditComponent } from './edit/edit.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MaterialModule } from './material/material.module';
+import { Daterangepicker } from 'ng2-daterangepicker';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { MaterialModule } from './material/material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    Daterangepicker,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
