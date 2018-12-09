@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-
+import { DaterangePickerComponent } from 'ng2-daterangepicker';
+import { ViewChild } from '@angular/core';
+declare var Date;
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-
+  dateRange:any;
+  startDate:string=new Date().toDateString();
+  endDate:string=new Date().toDateString();
+  tweetsPerCol=5;
+  @ViewChild(DaterangePickerComponent)
+  private picker: DaterangePickerComponent;  
   constructor() { }
-  public daterange: any = {};
  
     // see original project for full list of options
     // can also be setup using the config service to apply to multiple pickers
@@ -20,16 +26,14 @@ export class EditComponent implements OnInit {
  
     public selectedDate(value: any, datepicker?: any) {
         // this is the date the iser selected
-        console.log(value);
+       
+        this.startDate=value.start._d.toDateString();
+        this.endDate=value.end._d.toDateString();
  
         // any object can be passed to the selected event and it will be passed back here
-        datepicker.start = value.start;
-        datepicker.end = value.end;
- 
-        // or manupulat your own internal property
-        this.daterange.start = value.start;
-        this.daterange.end = value.end;
-        this.daterange.label = value.label;
+        
+   
+      
     }
     movies = [
       '@MakeSchool',
@@ -42,6 +46,14 @@ export class EditComponent implements OnInit {
     }
 
   ngOnInit() {
+
+  }
+
+  updateSettings(){
+    let tweetPerCol:any=this.tweetsPerCol;
+    localStorage.setItem("StartDate",this.startDate);
+    localStorage.setItem("EndDate",this.endDate);
+    localStorage.setItem("TweetsPerCol",tweetPerCol);
   }
 
 }

@@ -10,6 +10,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MaterialModule } from './material/material.module';
 import { Daterangepicker } from 'ng2-daterangepicker';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { TweetComponent } from './tweet/tweet.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -18,11 +20,13 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     AppComponent,
     HomeComponent,
     EditComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TweetComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     AngularFontAwesomeModule,
