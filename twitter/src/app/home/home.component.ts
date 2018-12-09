@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     let tweetsPerCol:any=localStorage.getItem("TweetsPerCol");
     if(!tweetsPerCol)
     {
-      tweetsPerCol=3;
+      tweetsPerCol=10;
     }
 
     this.totalCols=Math.floor(30/tweetsPerCol)
@@ -38,24 +38,18 @@ export class HomeComponent implements OnInit {
       startDate=new Date(startDate);
     }
     endDate=endDate ? new Date(endDate) : new Date();
-    let tweetsArray=[];
-    for(let i=0;i<30;i++)
-    {
-      tweetsArray[i]={
-        user:this.allUsers[this.getRandomInt(0,2)],
-        date:this.getRandomDate(startDate, endDate).toDateString(),
-        content:"hey this is my tweet"
-      };
-    }
-
-    let tweetIndex=0;
+   
     
     for(let i=0;i<tweetsPerCol;i++)
     {
       this.tweets[i]=[];
       for(let j=0;j<this.totalCols;j++)
       {
-        this.tweets[i][j]=tweetsArray[tweetIndex++];
+        this.tweets[i][j]={
+          user:this.allUsers[this.getRandomInt(0,2)],
+          date:this.getRandomDate(startDate, endDate).toDateString(),
+          content:"hey this is my tweet"
+        };
 
       }
       

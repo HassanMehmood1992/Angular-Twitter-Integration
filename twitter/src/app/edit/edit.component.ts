@@ -12,7 +12,7 @@ export class EditComponent implements OnInit {
   dateRange:any;
   startDate:string=new Date().toDateString();
   endDate:string=new Date().toDateString();
-  tweetsPerCol=5;
+  tweetsPerCol=10;
   @ViewChild(DaterangePickerComponent)
   private picker: DaterangePickerComponent;  
   constructor() { }
